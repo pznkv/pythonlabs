@@ -1,34 +1,20 @@
-def print_menu():       
+import math
 
-    print ("1. Что собрать на пуджа")
-    print ("2. Самая мужская песня")
-    print ("3. Стоит ли жить в Беларуси")
-    print ("4. Жесть(")
-    print ("5. Exit")
+print("Введите коэффициенты для уравнения")
+print("ax^2 + bx + c = 0:")
+a = float(input("a = "))
+b = float(input("b = "))
+c = float(input("c = "))
 
+discr = b ** 2 - 4 * a * c
+print("Дискриминант D = %.2f" % discr)
 
-loop =True
-
-while loop:        
-    print_menu()    
-    choice = input("Enter your choice [1-5]: ")
-
-    if choice=="1":
-        print ("Мом + рапира + бф норм")
-        
-    elif choice=="2":
-        print ("Валим гачи ремикс")
-       
-    elif choice=="3":
-        print ("не")
-        
-    elif choice=="4":
-        print ("ряльна")
-  
-    elif choice=="5":
-        print ("Menu 5 has been selected")
-      
-        loop=False 
-    else:
-       
-        print("Wrong option selection. Enter any key to try again..")
+if discr > 0:
+    x1 = (-b + math.sqrt(discr)) / (2 * a)
+    x2 = (-b - math.sqrt(discr)) / (2 * a)
+    print("x1 = %.2f \nx2 = %.2f" % (x1, x2))
+elif discr == 0:
+    x = -b / (2 * a)
+    print("x = %.2f" % x)
+else:
+    print("Корней нет")
